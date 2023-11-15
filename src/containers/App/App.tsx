@@ -1,4 +1,4 @@
-import Panel from '../../Panel/Panel.tsx';
+import Panel from '../../components/Panel/Panel.tsx';
 
 function App() {
   return (
