@@ -1,5 +1,5 @@
 import Panel from '../../components/Panel/Panel.tsx';
-import  { useState } from 'react';
+import { useState } from 'react';
 
 const App = () => {
   const [isToggle, setIsToggle] = useState(false);

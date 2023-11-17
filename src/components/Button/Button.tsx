@@ -2,7 +2,6 @@ import { IButton } from '../../types';
 import { FC } from 'react';
 
 const Button: FC<IButton> = ({ innerText, onClick, addClass }) => {
-
   return (
     <button
       onClick={onClick}

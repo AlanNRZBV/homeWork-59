@@ -5,21 +5,21 @@ import { IJokesItem, IMoviesItem, IPanel } from '../../types';
 import Jokes from '../Jokes/Jokes.tsx';
 import Button from '../Button/Button.tsx';
 
-const jokesUrl = 'https://api.chucknorris.io/jokes/random'
+const jokesUrl = 'https://api.chucknorris.io/jokes/random';
 
-const Panel: FC<IPanel> = ({switchContent}) => {
+const Panel: FC<IPanel> = ({ switchContent }) => {
   const [movies, setMovies] = useState<IMoviesItem[]>([]);
- const [jokes, setJokes]=useState<IJokesItem[]>([])
-  const fetchData = async ()=>{
+  const [jokes, setJokes] = useState<IJokesItem[]>([]);
+  const fetchData = async () => {
     const response = await fetch(jokesUrl);
-    if (response.ok){
-      const joke: IJokesItem = await response.json()
-      setJokes((prevJokes)=>[...prevJokes, joke])
+    if (response.ok) {
+      const joke: IJokesItem = await response.json();
+      setJokes((prevJokes) => [...prevJokes, joke]);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchData().catch(e=>console.error(e))
+    fetchData().catch((e) => console.error(e));
   }, []);
 
   const addMovie = (value: string, idValue: number) => {
@@ -44,10 +44,9 @@ const Panel: FC<IPanel> = ({switchContent}) => {
     );
   };
 
-
   return (
     <div className="border border-1 rounded-3 shadow py-3 px-3">
-      {switchContent ?
+      {switchContent ? (
         <>
           <MovieForm onSubmit={addMovie} />
           <hr />
@@ -56,17 +55,18 @@ const Panel: FC<IPanel> = ({switchContent}) => {
             deleteMovie={deleteMovie}
             changeMovieName={changeMovieName}
           />
-        </> :
+        </>
+      ) : (
         <>
           <Button
             onClick={fetchData}
-            innerText="Load joke"
+            innerText="Load another joke"
             addClass="btn-success"
           />
-          <hr/>
-          <Jokes jokes={jokes}/>
-        </>}
-
+          <hr />
+          <Jokes jokes={jokes} />
+        </>
+      )}
     </div>
   );
 };

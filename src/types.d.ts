@@ -24,20 +24,20 @@ export interface IMovieForm {
 }
 
 export interface IPanel {
-  switchContent: boolean
+  switchContent: boolean;
 }
 
 export interface IJokesItem {
-  id?: string,
-  value: string,
+  id?: string;
+  value: string;
 }
 
 export interface IButton {
-  innerText: string,
-  onClick: ()=> void
-  addClass?: string
+  innerText: string;
+  onClick: () => void;
+  addClass?: string;
 }
 
 export interface IJokes {
-  jokes: IJokesItem[]
+  jokes: IJokesItem[];
 }
