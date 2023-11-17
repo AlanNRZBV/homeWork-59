@@ -2,7 +2,7 @@ import Panel from '../../components/Panel/Panel.tsx';
 import { useState } from 'react';
 
 const App = () => {
-  const [isToggle, setIsToggle] = useState(false);
+  const [isToggle, setIsToggle] = useState(true);
 
   return (
     <div className="container pt-5">
