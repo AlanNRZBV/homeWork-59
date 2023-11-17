@@ -14,7 +14,7 @@ const JokesItem: FC<IJokesItem> = ({ value }) => {
         <motion.p
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.25 , delay: .25}}
+          transition={{ duration: 0.25, delay: 0.25 }}
           className="text text-black"
         >
           {value}
