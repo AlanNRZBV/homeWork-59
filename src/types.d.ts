@@ -22,3 +22,22 @@ export interface IMovies {
 export interface IMovieForm {
   onSubmit: (value, idValue) => void;
 }
+
+export interface IPanel {
+  switchContent: boolean
+}
+
+export interface IJokesItem {
+  id?: string,
+  value: string,
+}
+
+export interface IButton {
+  innerText: string,
+  onClick: ()=> void
+  addClass?: string
+}
+
+export interface IJokes {
+  jokes: IJokesItem[]
+}
