@@ -1,9 +1,5 @@
-import React from 'react';
-
 const Button = () => {
-  return (
-    <button className="btn btn-primary">Test btn</button>
-  );
+  return <button className="btn btn-primary">Test btn</button>;
 };
 
 export default Button;
